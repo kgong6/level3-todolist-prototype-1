@@ -11,7 +11,8 @@ app.secret_key = "iuu78iuytu765kukjngdtrwivukctjn"
 @app.route("/")
 def index():
     all_items, shopping_items = get_db()
-    return render_template("index.html", all_items = all_items,                shopping_items = shopping_items)
+    return render_template("index.html", all_items = all_items
+                                       , shopping_items = shopping_items)
 
 @app.route("/add_items", methods = ["post"])
 def add_items():
