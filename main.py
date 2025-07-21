@@ -1,22 +1,28 @@
-import sqlite3
-import random
-
 from flask import Flask, session, render_template, request, g
+
+import sqlite3, random
+
+
 
 
 app = Flask(__name__)
 app.secret_key = "iuu78iuytu765kukjngdtrwivukctjn"
+app.config["SESSION_COOKIE_NAME"] = "tfi7865jkhugyutfdt53w4q4ygbctshxro"
 
-
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def index():
-    all_items, shopping_items = get_db()
-    return render_template("index.html", all_items = all_items
-                                       , shopping_items = shopping_items)
+    session["all_items"], session["shopping_items"] = get_db()
+    return render_template("index.html", 
+                           all_items= session["all_items"],
+                           shopping_items= session["shopping_items"])
 
 @app.route("/add_items", methods = ["post"])
 def add_items():
-    return request.form["select_items"]
+    session["shopping_items"].append(request.form["select_items"])
+    session.modified = True
+    return render_template("index.html", 
+                           all_items= session["all_items"], 
+                           shopping_items= session["shopping_items"]) 
 
 def get_db():
     db = getattr(g, '_database', None)
