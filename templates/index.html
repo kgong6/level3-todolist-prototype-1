@@ -23,20 +23,20 @@
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 
         {% endfor %}
-        <input type="submit" value = "REMOVE ITEMS">
+        <input type="submit" value = "CHECK ITEMS" id="remove_btn">
         
       </form>
     </div>
 
 
-    
+    <!-- ADD ITEMS FORM -->
     <div id="add_item">
       <form action = "/add_items" method ="POST">
         <select name = "select_items">
           {% for item in all_items %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
-          <input type="submit" value="ADD ITEM">
+          <input type="submit" value="ADD ITEM" id="add_btn">
         
       </form>
     </div>

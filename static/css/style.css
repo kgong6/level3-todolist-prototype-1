@@ -1,5 +1,5 @@
 body {
-  font-family: "Raleway";
+  font-family: Georgia, sans-serif;
   font-size: 1.5em;
   text-align: center;
   
@@ -18,5 +18,44 @@ label {
   background-color : #E5E5E5;
   color: #302B29;
   padding:30px;
+  
+}
+
+#add_btn {
+  background-color : #01A88A;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  border:2px solid white;
+  margin: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  
+}
+
+#remove_btn {
+  background-color : lightgray;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  border:2px solid white;
+  margin: 10px;
+  padding: 10px 15px;
+
+}
+
+select{
+  font-family:"Georgia, sans-serif";
+  font-size: 0.85em;
+  text-align:center;
+  width:200px;
+  margin: 50px 10px;
+  padding: 5px 0;
+  border: 2px solid dark gray;
+  
+}
+
+#add_btn:hover {
+  background-color: darkslategrey;
   
 }
