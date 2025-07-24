@@ -1,0 +1,22 @@
+body {
+  font-family: "Raleway";
+  font-size: 1.5em;
+  text-align: center;
+  
+}
+
+img {
+  width: 400px;
+  padding: 20px
+}
+
+label {
+  margin: 25px 5px;
+}
+
+#remove_items {
+  background-color : #E5E5E5;
+  color: #302B29;
+  padding:30px;
+  
+}
