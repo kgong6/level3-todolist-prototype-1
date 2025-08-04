@@ -3,10 +3,14 @@ function check_me(input_id){
   var checked_label = document.querySelector("label[name=" + input_id + "]");
 
   if (checked_input.checked){
-    checked_label.style.textDecoration = "line-through";}
+    checked_label.style.textDecoration = "line-through";
+  }
+
   else {
     checked_label.style.textDecoration = "";
   }
+    
+  
 
   var btn = document.getElementById("remove_btn");
 
