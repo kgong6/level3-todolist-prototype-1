@@ -2,7 +2,7 @@
 <html>
   
   <head>
-    <title>Grocery List</title>
+    <title>Your To-do List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
     
@@ -10,11 +10,6 @@
 
   
   <body>
-
-    <!-- LOGO -->
-    <div> 
-      <img src = "https://raw.githubusercontent.com/MariyaSha/groceriesList/refs/heads/main/logo.png" alt= "grocery app logo">
-    </div>
     
     <div id="remove_items">
       <form action="/remove_items" method="POST">
