@@ -43,13 +43,13 @@ def get_db():
     if db is None:
         db=g._database = sqlite3.connect('todo_list.db')
         cursor = db.cursor()
-        cursor.execute("select prompt from suggestions")
+        cursor.execute("select name from tasks")
         all_data = cursor.fetchall()
         all_data = [str(val[0]) for val in all_data]
 
         todo_list = all_data.copy()
         random.shuffle(todo_list)
-        todo_list = todo_list[:2]
+        todo_list = todo_list[:3]
     
     return all_data, todo_list
     
