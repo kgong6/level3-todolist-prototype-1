@@ -10,10 +10,12 @@
 
   
   <body>
+
+    
     
     <div id="remove_items">
       <form action="/remove_items" method="POST">
-        {% for item in shopping_items %}
+        {% for item in todo_items %}
         <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{ item }}')">
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 

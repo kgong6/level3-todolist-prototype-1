@@ -16,7 +16,7 @@ def index():
                            all_items= session["all_items"],
                            todo_items= session["todo_items"])
 
-@app.route("/add_items", methods = ["post"])
+@app.route("/add_items", methods = ["POST"])
 def add_items():
     session["todo_items"].append(request.form["select_items"])
     session.modified = True
@@ -24,7 +24,7 @@ def add_items():
                            all_items= session["all_items"], 
                            todo_items= session["todo_items"]) 
 
-@app.route("/remove_items", methods = ["post"])
+@app.route("/remove_items", methods = ["POST"])
 def remove_items():
     checked_boxes = request.form.getlist("check")
 
