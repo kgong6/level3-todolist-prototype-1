@@ -1,17 +1,15 @@
-from flask import Flask, session, render_template, request, g, redirect, url_for,
+from flask import Flask, session, render_template, request, g, redirect, url_for
 
 from flask_sqlalchemy import SQLAlchemy
 
-import sqlite3, random
+import sqlite3, random,
 
 
 
 
 app = Flask(__name__)
-app.secret_key = "iuu78iuytu765kukjngdtrwivukctjn"
-app.config["SESSION_COOKIE_NAME"] = "tfi7865jkhugyutfdt53w4q4ygbctshxro"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
@@ -19,8 +17,15 @@ db= SQLAlchemy(app)
 
 class Todo(db.Model):
     task_id=db.Column(db.Integer,primary_key=True)
-    name=db.Column(db.String(100))
-    done=db.Column(db.Boolean)
+    name=db.Column(db.String(100), nullable=False)
+    done=db.Column(db.Boolean, default=False)
+
+def __init__(self, name: str, done: bool = False):
+    self.name = name
+    self.done = done
+
+with app.app_context():
+    db.create_all()
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -36,7 +41,7 @@ def index():
 @app.route('/add', methods=['POST'])
 def add():
     name=request.form.get("name")
-    new_task=Todo(name=name, done=False)
+    new_task= Todo(name = name, done = False) # type: ignore
     db.session.add(new_task)
     db.session.commit()
     return redirect(url_for("index"))
@@ -93,7 +98,7 @@ def get_db():
         random.shuffle(todo_list)
         todo_list = todo_list[:3]
     
-    return all_data, todo_list
+    return all_data, todo_list # type: ignore
     
 
 @app.teardown_appcontext
