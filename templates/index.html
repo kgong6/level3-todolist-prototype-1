@@ -2,6 +2,7 @@
 <html>
   
   <head>
+    <meta charset="UTF-8">
     <title>Your To-do List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
@@ -14,8 +15,49 @@
     <h1>
       Your To-Do List
     </h1>
+
+    <!--ADD BUTTON WHERE USER CAN ADD THEIR OWN TASKS -->
+    <div id="add">
+      <form action="/add" method="post">
+        <div>
+          <label> Enter the task </label>
+          <input type="text" name="name">
+          <button type="submit">Add task</button>
+        </div>
+
+      </form><br><br>
+      
+      <table>
+        <tbody>
+          
+          {%for todo in todo_list%}
+          <tr>
+            <td>{{todo.task_id}}</td>
+            <td>{{todo.name}}</td>
+            
+            {%if todo.done==False%}
+            <td>Not Done</td>
+            {%else%}
+            <td>Done</td>
+            {%endif%}
+            
+            <td><a href="/update/{{todo.task_id}}"Update</a></td>
+
+            <td><a href="/delete/{{todo.task_id}}"Delete</a></td>
+
+
+            
+          </tr>
+
+          {%endfor%}
+          
+        </tbody>
+      </table>
+    </div>
     
     
+
+    <!-- REMOVE ITEM BUTTON FOR THE SUGGESTED TASKS --> 
     <div id="remove_items">
       <form action="/remove_items" method="POST">
         {% for item in todo_items %}
@@ -29,7 +71,7 @@
     </div>
 
 
-    <!-- ADD ITEMS FORM -->
+    <!-- ADD ITEM BUTTON FOR THE SUGGESTED TASKS --> 
     <div id="add_item">
       <form action = "/add_items" method ="POST">
         <select name = "select_items">
