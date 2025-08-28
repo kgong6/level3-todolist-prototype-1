@@ -16,7 +16,7 @@ function check_me(input_id){
 
   btn.value = "REMOVE ITEMS";
   btn.style.color = "#FFFFFF";
-  btn.style.backgroundColor = "#FE7575";
+  btn.style.backgroundColor = "#A5BA5C";
   btn.style.cursor = "pointer";
 
   

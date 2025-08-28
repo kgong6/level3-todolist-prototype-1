@@ -7,7 +7,8 @@ body {
 
 h1{
   font-family: monospace, sans-serif;
-  font-size: 2.5em;
+  font-size: 1.5em;
+  color: #334965;
 }
 
 img {
@@ -27,8 +28,8 @@ label {
 }
 
 #add_btn {
-  background-color : #A5BA5C;
-  color: white;
+  background-color : #B4CCEC;
+  color: #302b29;
   font-weight: bold;
   border-radius: 20px;
   border:2px solid white;
@@ -61,6 +62,6 @@ select{
 }
 
 #add_btn:hover {
-  background-color: #517718;
-  
+  background-color: #334965;
+  color:white;
 }
