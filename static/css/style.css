@@ -27,7 +27,7 @@ label {
 }
 
 #add_btn {
-  background-color : #01A88A;
+  background-color : #A5BA5C;
   color: white;
   font-weight: bold;
   border-radius: 20px;
@@ -61,6 +61,6 @@ select{
 }
 
 #add_btn:hover {
-  background-color: darkslategrey;
+  background-color: #517718;
   
 }
