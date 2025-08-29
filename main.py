@@ -9,12 +9,18 @@ app = Flask(__name__)
 app.secret_key = "iuu78iuytu765kukjngdtrwivukctjn"
 app.config["SESSION_COOKIE_NAME"] = "tfi7865jkhugyutfdt53w4q4ygbctshxro"
 
+# Home page route
 @app.route("/", methods=["POST", "GET"])
 def index():
     session["all_items"], session["todo_items"] = get_db()
     return render_template("index.html", 
                            all_items= session["all_items"],
                            todo_items= session["todo_items"])
+
+"""
+Adds a selected item to the 'todo_items' list.
+It then re-renders to show the updated list.
+"""
 
 @app.route("/add_items", methods = ["POST"])
 def add_items():
@@ -24,6 +30,10 @@ def add_items():
                            all_items= session["all_items"], 
                            todo_items= session["todo_items"]) 
 
+"""
+Removes selected items from the 'todo_items' list and updates.
+It then re-renders to display the updated list.
+"""
 @app.route("/remove_items", methods = ["POST"])
 def remove_items():
     checked_boxes = request.form.getlist("check")
@@ -37,6 +47,10 @@ def remove_items():
     return render_template("index.html", 
            all_items= session["all_items"], 
            todo_items= session["todo_items"])
+
+
+'''Connects to the 'todo_list.db' SQLite database, retrieves a list of tasks,
+and shuffles the list to select three random tasks.'''
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -53,6 +67,8 @@ def get_db():
     
     return all_data, todo_list
     
+
+#Closes the database connection at the end.
 
 @app.teardown_appcontext
 def close_connection(exception):

@@ -11,9 +11,8 @@ h1{
   color: #334965;
 }
 
-img {
-  width: 400px;
-  padding: 20px
+mark {
+  background:#B4CCEC
 }
 
 label {
