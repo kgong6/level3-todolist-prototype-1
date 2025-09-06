@@ -64,3 +64,7 @@ select{
   background-color: #334965;
   color:white;
 }
+
+#add_item{
+  font-family:"Georgia, sans-serif";
+}
