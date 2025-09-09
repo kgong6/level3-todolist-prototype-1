@@ -1,7 +1,7 @@
 body {
   font-family: verdana, sans-serif;
   font-size: 1.5em;
-  text-align: center;
+  text-align: left;
   
 }
 
@@ -9,6 +9,8 @@ h1{
   font-family: monospace, sans-serif;
   font-size: 1.5em;
   color: #334965;
+  text-align: left;
+
 }
 
 mark {
@@ -44,8 +46,8 @@ label {
   font-weight: bold;
   border-radius: 20px;
   border:2px solid white;
-  margin: 10px;
   padding: 10px 15px;
+  margin: 15px;
 
 }
 
@@ -67,4 +69,9 @@ select{
 
 #add_item{
   font-family:"Georgia, sans-serif";
+}
+
+.center {
+  margin: auto;
+  width: 50%;
 }

@@ -11,21 +11,34 @@
   
   <body>
 
-    <!-- This is my heading -->
-    <h1>
-      <mark>To-Do</mark>:
-    </h1>
+    <!-- -- {{photo}} -- -->
+      <div>
+        <img src="static/images/rainy.gif" width="100%" alt="caption">
+      </div>
+    
+
+
     
     <!-- REMOVE ITEMS FORM -->
     <div id="remove_items">
+      <!-- This is my heading, placed in inside the remove_items div so it is inside the grey container -->
+      <h1>
+        <mark>To-Do</mark>:
+      </h1>
+
+      <!--This is my todolist of 3 wellbeing tasks reading from database --> 
       <form action="/remove_items" method="POST">
         {% for item in todo_items %}
         <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{item}}')">
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 
         {% endfor %}
-        <input type="submit" value = "Done" id="remove_btn">
-        
+      <!-- This is my 'Done' button inside of center div to center-->
+        <div class="center">
+          <input type="submit" value = "Done" id="remove_btn">
+        </div> 
+
+          
       </form>
     </div>
 
