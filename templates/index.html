@@ -2,6 +2,14 @@
 <html>
   
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="To-do list app">
+    <meta name="keywords" content="HTML, CSS, Flask, python, JavaScript">
+    <meta name="author" content="Kelly Gong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
     <title>Your To-do List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
@@ -11,10 +19,10 @@
   
   <body>
 
-    <!-- -- {{photo}} -- -->
-      <div>
-        <img src="static/images/rainy.gif" width="100%" alt="caption">
-      </div>
+    <!-- -- {{gif}} -- -->
+    <div>
+      <img id="status_image" src="static/images/sunny.gif" width= "100%" alt="caption"  onchange="update_Image()">
+    </div>
     
 
 
