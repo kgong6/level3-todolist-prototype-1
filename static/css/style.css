@@ -1,10 +1,11 @@
+/* Main body text styling */
 body {
   font-family: verdana, sans-serif;
   font-size: 1.5em;
   text-align: left;
   
 }
-
+/* Todo list heading styling */
 h1{
   font-family: monospace, sans-serif;
   font-size: 1.5em;
@@ -12,15 +13,19 @@ h1{
   text-align: left;
 
 }
-
+/* Highlighted "To-Do" text background */
 mark {
   background:#B4CCEC
 }
 
+/* Task label spacing */
 label {
   margin: 25px 5px;
 }
 
+/* TODO LIST CONTAINER STYLING */
+
+/* Gray container holding the todo list */
 #remove_items {
   background-color : #E5E5E5;
   color: #302B29;
@@ -28,6 +33,8 @@ label {
   
 }
 
+/* BUTTON STYLING */
+/* Plus button to add new tasks */
 #add_btn {
   background-color : #B4CCEC;
   color: #302b29;
@@ -39,7 +46,7 @@ label {
   cursor: pointer;
   
 }
-
+/* Done button to complete tasks */
 #remove_btn {
   background-color : lightgray;
   color: black;
@@ -51,6 +58,10 @@ label {
 
 }
 
+
+/* DROPDOWN MENU STYLING */
+
+/* Dropdown for selecting wellbeing tasks */
 select{
   font-family:"Georgia, sans-serif";
   font-size: 0.85em;
@@ -62,11 +73,13 @@ select{
   
 }
 
+/* Plus button hover colour change */
 #add_btn:hover {
   background-color: #334965;
   color:white;
 }
 
+/* Dropdown */
 #add_item{
   font-family:"Georgia, sans-serif";
 }

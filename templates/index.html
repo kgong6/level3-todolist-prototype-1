@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   
-  <head>
+  <head> 
+    <!-- Meta data -->
     <meta charset="UTF-8">
     <meta name="description" content="To-do list app">
     <meta name="keywords" content="HTML, CSS, Flask, python, JavaScript">
@@ -9,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    
     <title>Your To-do List</title>
+
+    <!-- Link with CSS and Javascript -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
     
@@ -19,7 +21,7 @@
   
   <body>
 
-    <!-- -- {{gif}} -- -->
+    <!-- -- Bunny weather gif progress indicator : changes based on completed tasks -- -->
     <div>
       <img id="status-image" src="static/images/rainy.gif" width= "100%" alt="caption">
     </div>
@@ -27,21 +29,25 @@
 
 
     
-    <!-- REMOVE ITEMS FORM -->
+    <!-- Todo list part -->
     <div id="remove_items">
-      <!-- This is my heading, placed in inside the remove_items div so it is inside the grey container -->
+      <!-- Main heading -->
       <h1>
         <mark>To-Do</mark>:
       </h1>
 
-      <!--This is my todolist of 3 wellbeing tasks reading from database --> 
+      <!--Form marks tasks as complete --> 
       <form action="/remove_items" method="POST">
         {% for item in todo_items %}
+        
+      <!-- Checkbox for each task
+          updates bunny weather with Javascript
+        -->
         <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{item}}')">
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 
         {% endfor %}
-      <!-- This is my 'Done' button-->
+      <!--'Done' button to remove checked tasks -->
         <div class="center">
           <input type="submit" value = "Done" id="remove_btn">
         </div> 
@@ -51,13 +57,18 @@
     </div>
 
     
-    <!-- ADD ITEMS FORM -->
+    <!-- Add new tasks part -->
     <div id="add_item">
+      <!-- Form to add new tasks from dropdown-->
       <form action = "/add_items" method ="POST">
+        <!-- Dropdown menu -->
         <select name = "select_items">
           {% for item in all_items %}
           <option value="{{ item }}">{{ item }}</option>
           {% endfor %}
+        </select>
+
+        <!-- Plus button to add selected task to todo list-->
           <input type="submit" value="+" id="add_btn">
         
       </form>
