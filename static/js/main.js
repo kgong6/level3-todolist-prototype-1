@@ -7,7 +7,7 @@ function check_me(input_id){
   
   var checked_input = document.querySelector("input[id='" + input_id + "']");
   var checked_label = document.querySelector("label[name='" + input_id + "']");
-  const status_image = document.getElementById('status-image')
+  var status_image = document.getElementById('status-image')
   
 
   //* Hero image changing as tasks get checked off*/
