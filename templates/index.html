@@ -2,6 +2,14 @@
 <html>
   
   <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="To-do list app">
+    <meta name="keywords" content="HTML, CSS, Flask, python, JavaScript">
+    <meta name="author" content="Kelly Gong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
     <title>Your To-do List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
@@ -11,25 +19,38 @@
   
   <body>
 
-    <!-- This is my heading -->
-    <h1>
-      <mark>To-Do</mark>:
-    </h1>
+    <!-- -- {{gif}} -- -->
+    <div>
+      <img id="status-image" src="static/images/rainy.gif" width= "100%" alt="caption">
+    </div>
+    
+
+
     
     <!-- REMOVE ITEMS FORM -->
     <div id="remove_items">
+      <!-- This is my heading, placed in inside the remove_items div so it is inside the grey container -->
+      <h1>
+        <mark>To-Do</mark>:
+      </h1>
+
+      <!--This is my todolist of 3 wellbeing tasks reading from database --> 
       <form action="/remove_items" method="POST">
         {% for item in todo_items %}
         <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{item}}')">
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 
         {% endfor %}
-        <input type="submit" value = "Done" id="remove_btn">
-        
+      <!-- This is my 'Done' button-->
+        <div class="center">
+          <input type="submit" value = "Done" id="remove_btn">
+        </div> 
+
+          
       </form>
     </div>
 
-
+    
     <!-- ADD ITEMS FORM -->
     <div id="add_item">
       <form action = "/add_items" method ="POST">
