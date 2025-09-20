@@ -33,7 +33,8 @@ function check_me(input_id) {
     console.log(count);
     
   } else {
-    // If task is unchecked, remove strikethrough, also subtract 1 from count to change hero image
+    /* If task is unchecked, remove strikethrough, 
+    also subtract 1 from count to change hero image */
     checked_label.style.textDecoration = "";
     count -= 1;
     console.log(count);
@@ -46,7 +47,7 @@ function check_me(input_id) {
   var btn = document.getElementById("remove_btn");
 
   btn.value = "Done";
-  btn.style.color = "#FFFFFF";
+  btn.style.color = "#202020";
   btn.style.backgroundColor = "#A5BA5C";
   btn.style.cursor = "pointer";
 }

@@ -14,7 +14,8 @@
 
     <!-- Link with CSS and Javascript -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}">
+    </script>
     
   </head>
 
@@ -23,10 +24,9 @@
 
     <!-- -- Bunny weather gif progress indicator : changes based on completed tasks -- -->
     <div>
-      <img id="status-image" src="static/images/rainy.gif" width= "100%" alt="caption">
+      <img id="status-image" src="static/images/rainy.gif" 
+        width= "100%" alt="caption">
     </div>
-    
-
 
     
     <!-- Todo list part -->
@@ -43,7 +43,8 @@
       <!-- Checkbox for each task
           updates bunny weather with Javascript
         -->
-        <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{item}}')">
+        <input type="checkbox" name="check" id="{{item}}" value="{{item}}" 
+          onchange="check_me('{{item}}')">
         <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
 
         {% endfor %}
@@ -51,27 +52,31 @@
         <div class="center">
           <input type="submit" value = "Done" id="remove_btn">
         </div> 
-
           
       </form>
     </div>
 
     
-    <!-- Add new tasks part -->
-    <div id="add_item">
-      <!-- Form to add new tasks from dropdown-->
-      <form action = "/add_items" method ="POST">
-        <!-- Dropdown menu -->
-        <select name = "select_items">
-          {% for item in all_items %}
-          <option value="{{ item }}">{{ item }}</option>
-          {% endfor %}
-        </select>
+    <div id="suggestions">
+      
+      <h2><mark>Suggestions</mark>:</h2>
 
-        <!-- Plus button to add selected task to todo list-->
-          <input type="submit" value="+" id="add_btn">
-        
-      </form>
+      <!-- Add new tasks part -->
+      <div id="add_item">
+        <!-- Form to add new tasks from dropdown-->
+        <form action = "/add_items" method ="POST">
+          <!-- Dropdown menu -->
+          <select name = "select_items">
+            {% for item in all_items %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+  
+          <!-- Plus button to add selected task to todo list-->
+            <input type="submit" value="+" id="add_btn">
+          
+        </form>
+      </div>
     </div>
     
     

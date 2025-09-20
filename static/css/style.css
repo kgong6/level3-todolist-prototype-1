@@ -13,6 +13,18 @@ h1{
   text-align: left;
 
 }
+
+/* Suggestions heading styling */
+h2{
+  font-family: monospace, sans-serif;
+  font-size: 1.5em;
+  color: #334965;
+  text-align: left;
+  margin-bottom: 0;
+  line-height: 0;
+}
+
+
 /* Highlighted "To-Do" text background */
 mark {
   background:#B4CCEC
@@ -31,6 +43,10 @@ label {
   color: #302B29;
   padding:30px;
   
+}
+
+#suggestions {
+  padding:30px;
 }
 
 /* BUTTON STYLING */

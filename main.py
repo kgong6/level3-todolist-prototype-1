@@ -1,4 +1,6 @@
-# Features : dropdown task selection, todo list, bunny illustration progress indicator.
+'''Features : dropdown task selection, todo list, 
+bunny illustration progress indicator.
+'''
 
 from flask import Flask, session, render_template, request, g
 
@@ -21,7 +23,6 @@ def index():
     return render_template("index.html",
                            all_items=session["all_items"],
                            todo_items=session["todo_items"])
-
 
 # Adds wellbeing tasks from dropdown to todolist
 @app.route("/add_items", methods=["POST"])
@@ -53,8 +54,6 @@ def remove_items():
     return render_template("index.html",
                            all_items=session["all_items"],
                            todo_items=session["todo_items"])
-
-
 
 def get_db():
     '''
