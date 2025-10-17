@@ -4,7 +4,7 @@ let count = 0;
 /* Runs when user checks/unchecks a task */
 function check_me(input_id) {
   var checked_input = document.querySelector("input[id='" + input_id + "']");
-  var checked_label = document.querySelector("label[name='" + input_id + "']");
+  var checked_label = document.querySelector("label[for='" + input_id + "']");
   
   /* Bunny weather image*/
   var status_image = document.getElementById("status-image");

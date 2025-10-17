@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   
   <head> 
     <!-- Meta data -->
@@ -14,7 +14,7 @@
 
     <!-- Link with CSS and Javascript -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}">
+    <script  src="{{ url_for('static', filename='js/main.js') }}">
     </script>
     
   </head>
@@ -22,10 +22,9 @@
   
   <body>
 
-    <!-- -- Bunny weather gif progress indicator : changes based on completed tasks -- -->
+    <!--Bunny weather gif progress indicator : changes based on completed tasks-->
     <div>
-      <img id="status-image" src="static/images/rainy.gif" 
-        width= "100%" alt="caption">
+      <img id="status-image" src="static/images/rainy.gif" alt="caption">
     </div>
 
     
@@ -45,7 +44,7 @@
         -->
         <input type="checkbox" name="check" id="{{item}}" value="{{item}}" 
           onchange="check_me('{{item}}')">
-        <label for="{{items}}" name = "{{item}}">{{ item }}</label><br>
+        <label for="{{item}}">{{ item }}</label><br>
 
         {% endfor %}
       <!--'Done' button to remove checked tasks -->
